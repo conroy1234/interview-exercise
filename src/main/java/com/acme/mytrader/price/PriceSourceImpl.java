@@ -26,7 +26,7 @@ public class PriceSourceImpl implements PriceSource {
     @Override
     public void run() {
         Random rand = new Random();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < TARGET; i++) {
             String security = SECURITIES.get(rand.nextInt(SECURITIES.size()));
             double price = MIN + (MAX - MIN) * rand.nextDouble();
             priceListeners.forEach(priceListener -> priceListener.priceUpdate(security, price));
