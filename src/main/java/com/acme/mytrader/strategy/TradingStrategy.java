@@ -34,9 +34,6 @@ public class TradingStrategy {
         Thread thread = new Thread(priceSource);
         thread.start();
         thread.join();
-        request.stream().map(
-                buyPrice -> new PriceListenerImpl(buyPrice,
-                        tradeExecutionService, isTimeToBuy)).forEach(priceSource::removePriceListener);
     }
 
 
